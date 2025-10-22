@@ -3,7 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .font-bebas-neue {
+        font-family: "Bebas Neue", sans-serif;
+      }
+      .font-roboto {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
   </head>
 
   <body>
@@ -13,7 +27,7 @@
       >
         <!-- Logo -->
         <img
-          class="w-24 md:w-2xs cursor-pointer transition-transform duration-300 hover:scale-110"
+          class="w-44 md:w-2xs cursor-pointer transition duration-300 hover:scale-110 active:scale-110 hover:opacity-80 active:opacity-80"
           src="icons/logo.png"
           alt="Logo"
         />
@@ -26,9 +40,17 @@
           for="menu-toggle"
           class="flex flex-col gap-1.5 cursor-pointer md:hidden z-20 peer-checked:hidden"
         >
-          <span class="w-6 h-0.5 bg-black"></span>
-          <span class="w-6 h-0.5 bg-black"></span>
-          <span class="w-6 h-0.5 bg-black"></span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 -960 960 960"
+            width="32px"
+            fill="#1f1f1f"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
         </label>
 
         <!-- Sidebar Menu -->
@@ -40,7 +62,17 @@
             for="menu-toggle"
             class="self-end cursor-pointer text-2xl font-bold px-4 text-gray-700 md:hidden"
           >
-            ✕
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32px"
+              viewBox="0 -960 960 960"
+              width="32px"
+              fill="#1f1f1f"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
           </label>
 
           <ul
@@ -77,31 +109,45 @@
           </ul>
         </div>
       </nav>
-      <div class="banner">
-        <h1>Be the Penguins of Winter</h1>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
-        </p>
-        <button
-          class="uppercase inline-flex gap-2 p-5 bg-gradient-to-b from-[#A4BC46] to-[#85A019] rounded-lg"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6"
+      <div
+        class="banner flex flex-col md:flex-row justify-center justify-evenly items-center gap-20 pb-16 px-4"
+      >
+        <div class="banner-description">
+          <h1 class="font-bebas-neue text-7xl text-[#363958]">
+            <span class="text-[#FABE4C]">Be the Penguins</span> <br />
+            of Winter
+          </h1>
+          <p class="font-roboto text-[#3E3E3E] text-base md:w-[370px] my-4">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+          <button
+            class="uppercase inline-flex gap-2 p-5 bg-gradient-to-b from-[#A4BC46] to-[#85A019] rounded-lg font-roboto text-white font-medium transition duration-300 hover:scale-110 active:scale-110 hover:opacity-80 active:opacity-80"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
-            />
-          </svg>
-          Buy Now
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M21.08 6.99998C20.9072 6.7006 20.6598 6.45111 20.3618 6.27585C20.0639 6.10059 19.7256 6.00554 19.38 5.99998H6.58L6 3.73998C5.9414 3.52181 5.81066 3.32992 5.62908 3.19555C5.44749 3.06118 5.22576 2.99224 5 2.99998H3C2.73478 2.99998 2.48043 3.10533 2.29289 3.29287C2.10536 3.48041 2 3.73476 2 3.99998C2 4.26519 2.10536 4.51955 2.29289 4.70708C2.48043 4.89462 2.73478 4.99998 3 4.99998H4.24L7 15.26C7.0586 15.4781 7.18934 15.67 7.37092 15.8044C7.55251 15.9388 7.77424 16.0077 8 16H17C17.1847 15.9994 17.3656 15.9477 17.5227 15.8507C17.6798 15.7536 17.8069 15.6149 17.89 15.45L21.17 8.88998C21.3122 8.59199 21.3783 8.26345 21.3626 7.93366C21.3469 7.60387 21.2498 7.2831 21.08 6.99998Z"
+                fill="white"
+              />
+              <path
+                d="M7.5 21C8.32843 21 9 20.3284 9 19.5C9 18.6716 8.32843 18 7.5 18C6.67157 18 6 18.6716 6 19.5C6 20.3284 6.67157 21 7.5 21Z"
+                fill="white"
+              />
+              <path
+                d="M17.5 21C18.3284 21 19 20.3284 19 19.5C19 18.6716 18.3284 18 17.5 18C16.6716 18 16 18.6716 16 19.5C16 20.3284 16.6716 21 17.5 21Z"
+                fill="white"
+              />
+            </svg>
+            Buy Now
+          </button>
+        </div>
+        <img src="images/model.png" alt="" />
       </div>
     </header>
   </body>
