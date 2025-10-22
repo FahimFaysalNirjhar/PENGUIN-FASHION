@@ -1,9 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PENGUIN FASHION</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body></body>
+
+  <body>
+    <header class="bg-[#FFFBF0]">
+      <nav
+        class="flex items-center justify-between md:justify-around px-6 py-6 bg-[#FFFBF0] relative"
+      >
+        <!-- Logo -->
+        <img
+          class="w-24 md:w-2xs cursor-pointer transition-transform duration-300 hover:scale-110"
+          src="icons/logo.png"
+          alt="Logo"
+        />
+
+        <!-- Hidden checkbox for toggle -->
+        <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+        <!-- Hamburger Icon -->
+        <label
+          for="menu-toggle"
+          class="flex flex-col gap-1.5 cursor-pointer md:hidden z-20 peer-checked:hidden"
+        >
+          <span class="w-6 h-0.5 bg-black"></span>
+          <span class="w-6 h-0.5 bg-black"></span>
+          <span class="w-6 h-0.5 bg-black"></span>
+        </label>
+
+        <!-- Sidebar Menu -->
+        <div
+          class="hidden peer-checked:flex flex-col absolute top-full right-6 bg-[#FFFBF0] shadow-lg rounded-lg w-56 transition-all duration-300 md:flex md:static md:shadow-none md:w-auto"
+        >
+          <!-- Close (X) Button -->
+          <label
+            for="menu-toggle"
+            class="self-end cursor-pointer text-2xl font-bold px-4 text-gray-700 md:hidden"
+          >
+            ✕
+          </label>
+
+          <ul
+            class="flex flex-col items-start gap-6 py-4 px-6 text-left md:flex-row md:gap-12 md:py-0 md:px-0"
+          >
+            <li>
+              <a
+                href="#"
+                class="font-bold transition-transform duration-300 hover:scale-110 inline-block"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-bold transition-transform duration-300 hover:scale-110 inline-block"
+                >Product</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-bold transition-transform duration-300 hover:scale-110 inline-block"
+                >About us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-bold transition-transform duration-300 hover:scale-110 inline-block"
+                >Contact us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="banner">
+        <h1>Be the Penguins of Winter</h1>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </p>
+        <button
+          class="uppercase inline-flex gap-2 p-5 bg-gradient-to-b from-[#A4BC46] to-[#85A019] rounded-lg"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            />
+          </svg>
+          Buy Now
+        </button>
+      </div>
+    </header>
+  </body>
 </html>
